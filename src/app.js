@@ -11,6 +11,8 @@ import { Provider } from 'react-redux';
 
 const store = configureStore();
 
+console.log('test');
+
 // We provide store to all our components using 'Provider'
 const jsx = (
     <Provider store={store}>
