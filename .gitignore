@@ -1,7 +1,4 @@
 node_modules/
-public/bundle-custom.js
-public/bundle-custom.js.map
-public/styles.css
-public/styles.css.map
+public/dist/
 *.swp
 *.swo
