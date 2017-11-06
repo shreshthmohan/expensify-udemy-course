@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import ExpenseForm from './ExpenseForm.js';
-import { editExpense, removeExpense } from '../actions/expenses.js';
+import { editExpense, startRemoveExpense } from '../actions/expenses.js';
 
 const EditPage = (props) => {
     return (
@@ -16,7 +16,7 @@ const EditPage = (props) => {
                 }}
             />
             <button onClick={() => {
-                props.dispatch(removeExpense({id: props.expense.id}));
+                props.dispatch(startRemoveExpense({id: props.expense.id}));
                 props.history.push('/');
             }}>
                 Remove Expense
@@ -27,7 +27,7 @@ const EditPage = (props) => {
 
 // The results of mapStateToProps must be a plain object,
 // which will be merged into the component’s props 
-const mapiStateToProps = (state, props) => {
+const mapStateToProps = (state, props) => {
     return {
         expense: state.expenses.find((expense) => {
             return expense.id === props.match.params.id;
@@ -36,4 +36,4 @@ const mapiStateToProps = (state, props) => {
 
 }
 
-export default connect(mapiStateToProps)(EditPage);
+export default connect(mapStateToProps)(EditPage);
